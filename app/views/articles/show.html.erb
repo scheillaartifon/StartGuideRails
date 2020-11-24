@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="article">
+    <p>
+      <strong>Title:</strong>
+      <%= @article.title %>
+    </p>
+    
+    <p>
+      <strong>Text:</strong>
+      <%= @article.text %>
+    </p>
+  </div>
+</div>
+
+<h2 class="comments-title">Comments</h2>
+
+<div class="comments-container">
+  <div class="comments">
+    <%= render @article.comments %>
+  </div>
+
+  <div class="new-comments">
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+
+    <div class="btn-voltar"><%= link_to 'Back', articles_path %></div>
+  </div>
+</div>
