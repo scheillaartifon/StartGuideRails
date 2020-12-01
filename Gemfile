@@ -58,3 +58,5 @@ gem 'devise'
 
 # Simple form
 gem 'simple_form'
+gem  'country_select'
+gem 'octicons_helper'

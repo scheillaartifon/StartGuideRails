@@ -1,0 +1,16 @@
+<header>
+  <div class="container row text-center align-items-center mx-auto">
+    <h1 class="col">User Edit</h1>
+    <div class="col"><%= link_to 'Logout', destroy_user_session_path, method: :delete%></div>
+  </div>
+</header>
+
+<div class="container mt-3">
+    <div class="btn-voltar"><%= link_to 'Back', articles_path %></div>
+    
+    <%= simple_form_for @user do |f| %>
+        <%= f.input :email, placeholder: 'user@domain.com'%>
+        <%= f.input :password %>
+        <%= f.button :submit %>
+    <% end %>
+</div>

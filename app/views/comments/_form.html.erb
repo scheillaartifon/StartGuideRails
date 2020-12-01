@@ -1,13 +1,13 @@
-<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
-    <p>
-      <%= form.label :commenter %><br>
+<%= form_with(model: [ @article, @article.comments.build ], local: true, class: 'row d-flex align-items-end') do |form| %>
+    <p class="col">
+      <%= form.label :Name %><br>
       <%= form.text_field :commenter %>
     </p>
-    <p>
-      <%= form.label :body %><br>
-      <%= form.text_area :body %>
+    <p class="col">
+      <%= form.label :Comemnt %><br>
+      <%= form.text_field :body %>
     </p>
-    <p>
+    <p class="col">
       <%= form.submit %>
     </p>
 <% end %>

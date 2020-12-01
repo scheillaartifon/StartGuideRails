@@ -1,26 +1,33 @@
 <header>
-  <h1>Hello, Rails!</h1>
-  <%= link_to 'sair', destroy_user_session_path, method: :delete%>
+  <div class="container row text-center align-items-center mx-auto">
+    <h1 class="col">Hello, Rails!</h1>
+    <div class="col row">
+      <div class="col"><%= link_to 'User Edit', edit_user_path(current_user)%></div>
+      <div class="col"><%= link_to 'Logout', destroy_user_session_path, method: :delete%></div>
+    </div>
+  </div>
 </header>
 
 <div class="container">
-  <article><%= link_to 'New article', new_article_path %></article>
-  <h1>Listing articles</h1>
+  <button type="button" class="btn btn-primary d-flex mt-3 ml-auto">
+    <%= link_to 'New article', new_article_path %>
+  </button>
+  <h3 class="text-center font-weight-bold mb-3">Listing articles</h3>
   
-  <table>
+  <table class="table">
     <tr>
-      <th class="col">Title</th>
+      <th>Title</th>
       <th class="col">Text</th>
-      <th class="col" colspan="3"></th>
+      <th colspan="3"></th>
     </tr>
   
     <% @articles.each do |article| %>
       <tr>
-        <td class="col"><%= article.title %></td>
-        <td class="col"><%= article.text %></td>
-        <td class="col"><%= link_to 'Show', article_path(article) %></td>
-        <td class="col"><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td class="col"><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= article.title %></td>
+        <td><%= article.text %></td>
+        <td><%= link_to 'Show', article_path(article)%></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </table>

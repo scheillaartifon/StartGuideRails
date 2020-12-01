@@ -1,9 +1,15 @@
 <header>
-    <h1>New article</h1>
+  <div class="container row text-center align-items-center mx-auto">
+    <h1 class="col">New article</h1>
+    <div class="col row">
+      <div class="col"><%= link_to 'User Edit', edit_user_path(current_user)%></div>
+      <div class="col"><%= link_to 'Logout', destroy_user_session_path, method: :delete%></div>
+    </div>
+  </div>
 </header>
 
-<div class="container">
+<div class="container mt-3">
     <%= render 'form' %>
-    
+
     <div class="btn-voltar"><%= link_to 'Back', articles_path %></div>
 </div>

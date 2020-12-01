@@ -1,28 +1,23 @@
-<div class="container">
-  <div class="article">
-    <p>
-      <strong>Title:</strong>
-      <%= @article.title %>
-    </p>
-    
-    <p>
-      <strong>Text:</strong>
-      <%= @article.text %>
-    </p>
+<header>
+  <div class="container row text-center align-items-center mx-auto">
+    <h1 class="col">Show Article</h1>
+    <div class="col row">
+      <div class="col"><%= link_to 'User Edit', edit_user_path(current_user)%></div>
+      <div class="col"><%= link_to 'Logout', destroy_user_session_path, method: :delete%></div>
+    </div>
   </div>
+</header>
+
+<div class="container">
+  <div class="btn-voltar mt-3"><%= link_to 'Back', articles_path %></div>
+
+  <h3><%= @article.title %></h3>
+  <p><%= @article.text %></p>
 </div>
 
-<h2 class="comments-title">Comments</h2>
 
-<div class="comments-container">
-  <div class="comments">
-    <%= render @article.comments %>
-  </div>
-
-  <div class="new-comments">
-    <h2>Add a comment:</h2>
-    <%= render 'comments/form' %>
-
-    <div class="btn-voltar"><%= link_to 'Back', articles_path %></div>
-  </div>
+<div class="container mt-5">
+  <h4 class="comments-title mb-3">Comments</h4>
+  <%= render 'comments/form' %>
+  <%= render @article.comments%>
 </div>
