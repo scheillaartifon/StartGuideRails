@@ -60,3 +60,4 @@ gem 'devise'
 gem 'simple_form'
 gem  'country_select'
 gem 'octicons_helper'
+gem "cocoon"
