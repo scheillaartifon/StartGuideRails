@@ -11,6 +11,17 @@
     <%= simple_form_for @user do |f| %>
         <%= f.input :email, placeholder: 'user@domain.com'%>
         <%= f.input :password %>
-        <%= f.button :submit %>
+
+        <h3 class="comments-title mt-4">Items</h3>
+        <div id="items">
+          <%= f.simple_fields_for :items do |item| %>
+              <%= render 'item_fields', f: item %>
+            <% end %>
+            <button type="button" class="btn btn-primary d-flex mt-3 mb-3 ml-auto mr-auto">
+              <%= link_to_add_association 'add item', f, :items %> 
+            </button>
+        </div>
+        <%= f.submit %>
     <% end %>
 </div>
+
